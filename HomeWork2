@@ -38,22 +38,17 @@
 1
 **/
 
-public class Test02 {
-	public static void main(String[] args) {
-		int j=1;
+public static void main(String[] args) {
 		for (int i=0;i<4;i++){	
 			for(int k=0;k<i+1;k++) {
-				System.out.print(j);
-			}			
-			j++;		
+				System.out.print(i+1);
+			}					
 			System.out.println("");
 		}	
-		j=5;
 		for (int i=5;i>0;i--){	
 			for(int k=1;k<i+1;k++) {
-				System.out.print(j);
-			}			
-			j--;		
+				System.out.print(i);
+			}							
 			System.out.println("");
 		}
 	}
