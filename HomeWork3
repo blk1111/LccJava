@@ -1,0 +1,82 @@
+/*
+
+1.迴圈+陣列
+	建立一個整數的一維陣列，元素必須要有10個。
+	由使用者輸入欲尋找的數字。
+	若沒有找到時。必須顯是在哪個索引值找到它。
+	若沒有找到時，要顯是陣列中沒有此數字
+	
+2. 迴圈+陣列(氣泡排序法)
+	建立一個整數的一維陣列，元素必須要有10個。
+	請利用迴圈方式，將一維陣列排序(請由小至大排序)
+	排序後，請呈現出內容
+	若上述法做法時，可以在嘗試改成(由大至小排序)
+*/
+import java.util.ArrayList;
+public class Loop01 {	
+	public static void main(String[] args) {
+		//int [] nums = new int[10];
+		//int[] nums = {10,20,30,40,50,60,70,80,90,100};
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		//1~100 10個隨機數
+		for(int i=0;i<10;i++) {
+			int a =(int)(Math.random()*100)+1;
+			//System.out.println(a);
+			nums.add(a);
+		}
+		
+		java.util.Scanner  sc= new java.util.Scanner(System.in);
+		System.out.println("請輸入尋找的數字:");
+		int num = sc.nextInt();
+		int m = 0;
+		System.out.println("陣列內容為:"+nums);
+		if(nums.contains(num) == false)
+			System.out.println("未尋找到數字");
+		else {
+			for(int n : nums) {
+				if (num == n) {
+				System.out.println("索引值為:"+m);
+				break;
+				/*
+				if(m == nums.size()) 
+					System.out.println("未尋找到數字");
+				*/
+				}
+				m++;
+			}
+		}
+			
+		//第一題結束===================================
+		int x =0;
+		for(int j=0;j<nums.size();j++) {
+			for(int k=1;k<nums.size();k++) {
+				//System.out.println(nums.get(k-1)+","+nums.get(k));
+				//判斷大小做交換
+				//小至大
+				if(nums.get(k-1) > nums.get(k)) {					
+					x = nums.get(k-1);
+					nums.set(k-1,nums.get(k));
+					nums.set(k,x);
+					//System.out.println("x="+x);
+					//System.out.println(nums);
+				}
+				
+				/*
+				大至小
+				if(nums.get(k-1) < nums.get(k)) {					
+					x = nums.get(k-1);
+					nums.set(k-1,nums.get(k));
+					nums.set(k,x);
+					//System.out.println("x="+x);
+					System.out.println(nums);
+				}
+				*/
+			}
+			System.out.println("=============");
+		}
+		System.out.println("結束:"+nums);
+		//第二題結束===============================================
+				
+	}	
+}
